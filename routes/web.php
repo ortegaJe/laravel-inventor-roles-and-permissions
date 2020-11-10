@@ -31,3 +31,5 @@ Route::group(['middleware' => ['permission:create_users|edit_users|delete_users|
     Route::resource('users', 'UserController');
 });
 Route::get('/roles/{role}/delete_roles ', 'UserController@delete_roles')->name('users.delete_roles');
+
+Route::resource('campus', 'CampuController'); // colocar un solo controlador para las sedes

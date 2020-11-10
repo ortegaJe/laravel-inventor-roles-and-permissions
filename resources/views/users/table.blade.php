@@ -2,6 +2,7 @@
     <table class="table" id="users-table">
         <thead>
             <tr>
+                <th>Photo</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Rol</th>
@@ -11,6 +12,8 @@
         <tbody>
             @foreach($users as $user)
             <tr>
+                <td><img class="img-circle img-fluid elevation-2" src=" {{ asset('upload/'.$user->image) }}"
+                        alt="{{ $user->image }}" width="36px"></td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ implode( ", ",$user->getRoleNames()->toArray())}}</td>
